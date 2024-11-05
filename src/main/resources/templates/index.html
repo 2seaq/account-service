@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>OSYS - Lightning Wallet</title>
+    <link rel="stylesheet" href="/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+</head>
+<body>
+    <!-- tag::logout[] -->
+    <div class="Loginform">
+        <form th:action="@{/logout}" method="post">
+            <!-- Write your comments here -->
+            Hi, <span id="managername" th:text="${#authentication.getPrincipal().getEmail()}">user</span>
+            <input type="submit" value="Log Out"/>
+        </form>
+    </div>
+    <div class="App" id="react"></div>
+
+    <script src="built/bundle.js"></script>
+
+</body>
+</html>

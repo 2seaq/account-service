@@ -1,24 +1,21 @@
 {
-  "name": "spring-data-rest-and-reactjs",
+  "name": "core-lightning-accounts-service",
   "version": "0.1.0",
-  "description": "Demo of ReactJS + Spring Data REST",
+  "description": "Core Lightning Accounts Service",
   "repository": {
     "type": "git",
-    "url": "git@github.com:spring-guides/tut-react-and-spring-data-rest.git"
+    "url": "https://github.com/2seaq/account-service.git"
   },
   "keywords": [
     "rest",
     "hateoas",
     "spring",
+    "bitcoin",
     "data",
     "react"
   ],
-  "author": "Greg L. Turnquist",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/spring-guides/tut-react-and-spring-data-rest/issues"
-  },
-  "homepage": "https://github.com/spring-guides/tut-react-and-spring-data-rest",
+  "author": "2seaq",
+  "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",

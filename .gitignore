@@ -6,6 +6,7 @@ target/
 src/main/js/
 *.p12
 src/main/resources/application.properties
+package-lock.json
 
 ### STS ###
 .apt_generated

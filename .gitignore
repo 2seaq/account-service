@@ -7,6 +7,11 @@ src/main/js/
 *.p12
 src/main/resources/application.properties
 package-lock.json
+src/main/resources/static/built/
+src/main/resources/static/built/bundle.js
+src/main/resources/static/built/bundle.js.map
+src/main/resources/static/built/
+!**/src/main/resources/static/built/
 
 ### STS ###
 .apt_generated
@@ -36,3 +41,7 @@ build/
 ### VS Code ###
 .vscode/
 node_modules
+src/main/resources/static/built/node_modules_web-vitals_dist_web-vitals_js.bundle.js
+src/main/resources/static/built/bundle.js
+*.mp3
+package-lock.json

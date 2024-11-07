@@ -45,3 +45,4 @@ src/main/resources/static/built/node_modules_web-vitals_dist_web-vitals_js.bundl
 src/main/resources/static/built/bundle.js
 *.mp3
 package-lock.json
+src/main/resources/static/built/bundle.js

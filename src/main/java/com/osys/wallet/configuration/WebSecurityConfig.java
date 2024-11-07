@@ -1,4 +1,3 @@
-// Copyright (c) 2024 Chris Jackson
 // Distributed under the MIT software license
 package com.osys.wallet.configuration;
 
@@ -38,16 +37,4 @@ public class WebSecurityConfig {
 
 		return http.build();
 	}
-	
-	/*
-	@Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-		return authenticationConfiguration.getAuthenticationManager();
-	}
-
-	@Bean
-	public SecurityEvaluationContextExtension securityEvaluationContextExtension() {
-	return new SecurityEvaluationContextExtension();
-	}
-	*/
 }

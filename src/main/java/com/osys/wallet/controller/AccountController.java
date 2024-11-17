@@ -94,7 +94,7 @@ public class AccountController {
             if(output.getAddress().equals(btcAddress)) {
 
                 ResponseBlock block = onChainService.getBlockInfo(output.getBlockheight());
-                System.out.println("Block check " + block.getTimestamp());
+                System.out.println("OSYS - Block check " + block.getTimestamp());
                 output.setBlockheight(block.getTimestamp());
                 sortedOutputs.add(output);
             }
@@ -130,9 +130,9 @@ public class AccountController {
             invoicesTotal = fetchInvoicesTotal;
         }
 
-    	System.out.println("CJ - Deposit Controller - Totals mSat: " + depositTotal.toString());
-    	System.out.println("CJ - Pays Controller - Totals mSat: " + paysTotal.toString());
-    	System.out.println("CJ - Invoices Controller - Totals mSat: " + invoicesTotal.toString());
+    	System.out.println("OSYS - Deposit Controller - Totals mSat: " + depositTotal.toString());
+    	System.out.println("OSYS - Pays Controller - Totals mSat: " + paysTotal.toString());
+    	System.out.println("OSYS - Invoices Controller - Totals mSat: " + invoicesTotal.toString());
 
     	Account myAccount = new Account(allBitcoinAddresses.get(0).getBtcAddress(), paysTotal
         , invoicesTotal, depositTotal);

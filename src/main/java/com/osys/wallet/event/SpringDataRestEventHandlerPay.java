@@ -54,7 +54,7 @@ public class SpringDataRestEventHandlerPay {
 
 		String name = SecurityContextHolder.getContext().getAuthentication().getName();
 
-		System.out.println("Attempting to Pay applyUserInformationUsingSecurityContext name value is : " + name);
+//		System.out.println("Attempting to Pay applyUserInformationUsingSecurityContext name value is : " + name);
 		String payStatus;
 
 		//String email = SecurityContextHolder.getContext().getAuthentication().getPrincipal().getEmail();
@@ -73,10 +73,12 @@ public class SpringDataRestEventHandlerPay {
 		pay.setManager(manager);
 
 
+//		System.out.println("Payment Details bolt11 " + pay.getBolt11());
+//		System.out.println("Payment Details bolt11 description" + pay.getBolt11Description());
 
 		// Determine if intercentre payment
 		if(pay.getBolt11Payee().equals("027dae933ef842080ae42c9c2eb76d12e340a2e50b70a66d7a12c3e6febd3f1562")) {
-			System.out.println("MAKE INTERPAYMENT  - invoiceRepo.findbyBollt - set to Paid");
+//			System.out.println("MAKE INTERPAYMENT  - invoiceRepo.findbyBollt - set to Paid");
 
 			Invoice interInvoice = invoiceRepository.findByBolt11(pay.getBolt11()).orElse(null);
 			interInvoice.setStatus("internalpaid");
@@ -88,8 +90,8 @@ public class SpringDataRestEventHandlerPay {
 		} else {
 			payStatus = lightningServiceImpl.payInvoice(pay.getBolt11());
 
-			System.out.println("Event Handler lightningServiceImpl.payInvoice payStatus: " + payStatus);
-			if(payStatus.equals("Resp Paycomplete")){
+//			System.out.println("Event Handler lightningServiceImpl.payInvoice payStatus: " + payStatus);
+			if(payStatus.equals("Resp Pay: complete")){
 				pay.setStatus("success");
 			} else {
 				pay.setStatus("failure");

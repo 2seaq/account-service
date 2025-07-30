@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 
 import com.osys.wallet.model.BitcoinAddress;
 import com.osys.wallet.model.GoogleUserInfo;
+import com.osys.wallet.model.Invoice;
 import com.osys.wallet.model.Manager;
 import com.osys.wallet.repository.BitcoinAddressRepository;
+import com.osys.wallet.repository.InvoiceRepository;
 import com.osys.wallet.repository.ManagerRepository;
 
 
@@ -24,6 +26,9 @@ public class CustomOidcUserService extends OidcUserService {
 
     @Autowired
     private BitcoinAddressRepository bitcoinAddressRepository; 
+
+    @Autowired
+    private InvoiceRepository invoiceRepository;
 
     @Autowired
     private LightningServiceImpl lightningServiceImpl;
@@ -53,6 +58,9 @@ public class CustomOidcUserService extends OidcUserService {
             managerRepository.save(manager);
             BitcoinAddress bitcoinAddress = new BitcoinAddress(newAddress,manager);
             bitcoinAddressRepository.save(bitcoinAddress);
+
+            Invoice invoice = new Invoice("Welcome Funds","Bolt11",10000L,"Welcome to Lightning",1750403130339L,"paid",manager);
+            invoiceRepository.save(invoice);
         }   
 
         return oidcUser;

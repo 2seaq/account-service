@@ -1,7 +1,14 @@
-.App {
+.AppOG {
     text-align: center;
   }
   
+.App {
+    height: 100vh; /* or 100% if body/html is already set to full height */
+    overflow: auto; /* Optional: if scroll needed */
+    position: relative; /* Important if using absolute children later */
+}
+
+
   .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -50,7 +57,7 @@
       monospace;
   }
 
-  .Loginform {
+  .LoginformOG {
     padding: 10px 10px 10px 10px;
     margin-left: auto; 
     margin-right: 0;
@@ -62,3 +69,15 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  .Loginform {
+    position: absolute;
+    text-align: right;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Make sure it's above other content */
+    background-color: white; /* Optional: or use transparent */
+    padding: 10px; /* Optional: spacing inside */
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); Optional: for visibility */
+}

@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Lightning Wallet" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="apple-touch-icon" href="%PUBLIC_URL%/icons/icon-192.png" />
+<link rel="manifest" href="/manifest.json" />
+
 <head lang="en">
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>OSYS - Bitcoin Lightning Wallet - Testnet</title>
     <link rel="stylesheet" href="/main.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
 </head>
+
 <body>
     <div class="Loginform">
-        <form th:action="@{/logout}" method="post">
-            Hi, <span id="managername" th:text="${#authentication.getPrincipal().getEmail()}">user</span>
-            <input type="submit" value="Log Out"/>
-        </form>
+        <div th:if="${#authorization.expression('isAuthenticated()')}">
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Log Out" />
+            </form>
+        </div>
     </div>
-    <div class="App" id="root"></div>
-
-    <script src="built/bundle.js"></script>
+    <div th:if="${#authorization.expression('isAuthenticated()')}">
+        <div class="App" id="root"></div>
+    </div>
+    <script src="static/js/main.1c76f42a.js"></script>
 </body>
+
 </html>

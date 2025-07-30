@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/static/js/main.eb666d85.js",
+    "static/js/453.20c255a5.chunk.js": "/static/js/453.20c255a5.chunk.js",
+    "static/media/scanner-beep.mp3": "/static/media/scanner-beep.31230d8a06fefd7166d6.mp3",
+    "index.html": "/index.html",
+    "main.eb666d85.js.map": "/static/js/main.eb666d85.js.map",
+    "453.20c255a5.chunk.js.map": "/static/js/453.20c255a5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.eb666d85.js"
+  ]
+}

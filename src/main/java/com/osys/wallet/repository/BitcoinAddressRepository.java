@@ -16,10 +16,10 @@ public interface BitcoinAddressRepository extends PagingAndSortingRepository<Bit
 	BitcoinAddress save(BitcoinAddress bitcoinaddress);
 
    	@Override
-	@Query("SELECT e FROM BitcoinAddress e WHERE e.manager.email LIKE ?#{ principal?.email }")	
+	@Query("SELECT e FROM BitcoinAddress e WHERE e.manager.sub LIKE ?#{ principal?.name }")	
 	Page<BitcoinAddress> findAll(Pageable pageable);
 
-	@Query("SELECT e FROM BitcoinAddress e WHERE e.manager.email LIKE ?#{ principal?.email }")	
+	@Query("SELECT e FROM BitcoinAddress e WHERE e.manager.sub LIKE ?#{ principal?.name }")	
 	Iterable<BitcoinAddress> findAllByManager();
 
 }
